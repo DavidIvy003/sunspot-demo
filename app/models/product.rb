@@ -3,7 +3,9 @@ class Product < ActiveRecord::Base
   STATE_INACTIVE = 'INACTIVE'
 
   searchable do
-    text :name, :description, :features
+    text :name, boost: 5
+    text :features, boost: 2
+    text :description
   end
 
   scope :active, -> { where(state: STATE_ACTIVE) }
