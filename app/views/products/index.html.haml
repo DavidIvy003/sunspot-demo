@@ -1,0 +1,4 @@
+#products
+  - @products.each do |product|
+    %h2= link_to product.name, product
+    .description= product.description
