@@ -6,6 +6,7 @@ class Product < ActiveRecord::Base
     text :name, boost: 5
     text :features, boost: 2
     text :description
+    string :state
   end
 
   scope :active, -> { where(state: STATE_ACTIVE) }
