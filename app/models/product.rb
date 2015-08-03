@@ -10,6 +10,9 @@ class Product < ActiveRecord::Base
     # string :state
     boolean :searchable
     integer :price
+    latlon :location do
+      Sunspot::Util::Coordinates.new(latitude, longitude)
+    end
   end
 
   scope :active, -> { where(state: STATE_ACTIVE) }
