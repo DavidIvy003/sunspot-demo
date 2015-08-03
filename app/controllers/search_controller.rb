@@ -7,6 +7,7 @@ class SearchController < ApplicationController
       fulltext params[:search]
       with(:searchable, true)
       facet(:price)
+      order_by(:views, :desc)
       with(:price, params[:price]) if params[:price].present?
       with(:location).in_radius(latitude, longitude, 20, bbox: true) if latitude && longitude
     end

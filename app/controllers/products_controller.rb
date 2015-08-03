@@ -5,5 +5,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @product.views += 1
+    @product.save
   end
 end
