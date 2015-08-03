@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731143011) do
+ActiveRecord::Schema.define(version: 20150731154036) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150731143011) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "state",       limit: 10
+    t.float    "price",       limit: 24
   end
 
 end
