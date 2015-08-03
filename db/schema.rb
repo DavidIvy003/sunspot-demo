@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731160028) do
+ActiveRecord::Schema.define(version: 20150731162003) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150731160028) do
     t.float    "price",       limit: 24
     t.float    "longitude",   limit: 24
     t.float    "latitude",    limit: 24
+    t.integer  "views",       limit: 4,     default: 0
   end
 
 end
