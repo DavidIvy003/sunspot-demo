@@ -9,6 +9,7 @@ class Product < ActiveRecord::Base
     text :description
     # string :state
     boolean :searchable
+    integer :price
   end
 
   scope :active, -> { where(state: STATE_ACTIVE) }

@@ -1,8 +1,12 @@
 class SearchController < ApplicationController
   def index
-    @results = Product.search do
+    @search = Product.search do
       fulltext params[:search]
       with(:searchable, true)
-    end.results
+      facet(:price)
+      with(:price, params[:price]) if params[:price].present?
+    end
+
+    @results = @search.results
   end
 end
