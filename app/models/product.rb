@@ -16,6 +16,9 @@ class Product < ActiveRecord::Base
     end
   end
 
+  handle_asynchronously :solr_index, queue: 'indexing', priority: 50
+  handle_asynchronously :solr_index!, queue: 'indexing', priority: 50
+
   scope :active, -> { where(state: STATE_ACTIVE) }
 
   def searchable
