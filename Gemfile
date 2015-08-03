@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml-rails', '~> 0.9'
 
 gem 'sunspot_rails' # Add Solr support
+gem 'delayed_job_active_record'
 
 group :development, :test do
   gem 'byebug'
